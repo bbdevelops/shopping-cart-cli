@@ -19,3 +19,13 @@ When prompted to select an option, enter a number 1 - 5, or 0 to quit the progra
 
 ## Tests
 In the /shopping-cart-cli/tests/ folder there is a test file named ```shopping_cart_test.rb``` which offers a number of unit tests for the program. Tests include: cart variable initialization tests and add items/item manipulation tests.
+
+## Functional Requirements
+Must create a ShoppingCart object.
+Said object must store a hash
+In said hash, the keys are the names of items in the cart and where the values are arrays.
+Said value that contain arrays must contain the price per unit of item associated with key, and the quantity of said item.
+Must show a list of items in cart.
+Must be able to add and remove items from cart.
+Must show the total value of all items in cart when called.
+Must be able to exit the program from within the program, not just Ctrl+C.
