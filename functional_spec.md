@@ -29,3 +29,4 @@ Must show a list of items in cart.
 Must be able to add and remove items from cart.
 Must show the total value of all items in cart when called.
 Must be able to exit the program from within the program, not just Ctrl+C.
+Must make an attempt to incentivize users to stop them from quitting the program.
