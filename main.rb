@@ -17,11 +17,25 @@ class ShoppingCart
     open unless skip_menu
   end
 
-  def open
-    puts "Hello, welcome to Shopping Cart CLI Ultra!"
-    puts "Let's get started.\n\n"
-    menu
-  end
+def open
+  puts "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀"
+  puts "⠀⠛⠻⠶⣶⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀"
+  puts "⠀⠀⠀⠀⠈⢻⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⠀⠀⠀"
+  puts "⠀⠀⠀⠀⠀⠀⢻⡏⠉⠉⠉⢹⡏⠉⠉⠉⣿⠉⠉⠉⠉⠉⠉⣹⠇⠀⠀⠀⠀"
+  puts "⠀⠀⠀⠀⠀⠀⠈⣿⣀⣀⣀⣸⣧⣀⣀⣀⣿⣀⣀⣀⣀⣀⣠⡿⠀⠀⠀⠀⠀"
+  puts "⠀⠀⠀⠀⠀⠀⠀⠸⣧⠀⠀⢸⡇⠀⠀⠀⣿⠀⠀⠀⠀⠀⣿⠃⠀⠀⠀⠀⠀"
+  puts "⠀⠀⠀⠀⠀⠀⠀⠀⢹⣤⣤⣼⣧⣤⣤⣤⣿⣤⣤⣤⣤⣼⡏⠀⠀⠀⠀⠀⠀"
+  puts "⠀⠀⠀⠀⠀⠀⠀⠀⠀⢿⠀⢸⡇⠀⠀⠀⣿⠀⠀⠀⢠⡿⠀⠀⠀⠀⠀⠀⠀"
+  puts "⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠷⠼⠷⠤⠤⠤⠿⠤⠤⠤⠾⠃⠀⠀⠀⠀⠀⠀⠀"
+  puts "⠀⠀⠀⠀⠀⠀⠀⠀⢀⣾⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀"
+  puts "⠀⠀⠀⠀⠀⠀⠀⠀⢾⣷⣶⣶⠶⠶⠶⠶⠶⠶⣶⠶⣶⠀⠀⠀⠀⠀⠀⠀⠀"
+  puts "⠀⠀⠀⠀⠀⠀⠀⠀⠸⣧⣿⠀⠀⠀⠀⠀⠀⠀⢷⣄⣼⠇⠀⠀⠀⠀⠀⠀⠀"
+  puts "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀"
+  puts ""
+  puts "Welcome to Shopping Cart CLI Ultra!"
+  puts "Let's get started.\n\n"
+  menu
+end
 
   def menu
     loop do
@@ -63,20 +77,20 @@ class ShoppingCart
           print "Are you sure you want to quit? (y/n) "
           confirmation = gets.chomp.downcase
             if confirmation == "y" && @exit_offer_flag
-                puts "Goodbye!"
+                goodbye_cart
                 break
             elsif confirmation == "y"
               print "Are you REALLY sure you want to quit? (y/n) "
               really_check = gets.chomp.downcase
               if @spree_flag 
-                puts "Goodbye!"
+                goodbye_cart
                 break
               end
               if really_check == "y"
                 print "What if we offered you an all expenses paid shopping spree? Would you still leave? (y/n) "
                 spree_check = gets.chomp.downcase
                   if spree_check == "y"
-                    puts "Goodbye!"
+                    goodbye_cart
                     break
                   elsif spree_check == "n"
                     @exit_offer_flag = true
@@ -251,6 +265,33 @@ class ShoppingCart
       items[name] = [price, quantity]
     end
   end
+    def goodbye_cart
+    puts ""
+    puts "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡤⠴⠒⠤⣄⡀⠀⠀⠀⠀⢠⣾⠉⠉⠉⠉⠑⠒⠦⢄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀      "
+    puts "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣴⠋⠀⠀⠀⠀⠀⠉⠲⡄⠀⢠⠏⡏⠀⠀⠀⠀⠀⠀⠀⠀⠉⠳⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀       "
+    puts "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⢤⣤⣀⡀⠀⠀⠀⠀⠀⢰⡏⠀⠀⠀⠀⠀⠀⠀⠀⠘⢆⢸⠀⡇⠀⠀⠀⢀⣀⠀⠀⠀⠀⠀⢸⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀      "
+    puts "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⠏⠀⠀⠀⠀⠈⠙⠢⣄⠀⠀⣿⠀⠀⠀⢰⣿⣷⣆⠀⠀⠀⠘⣾⠀⠇⠀⠀⠀⢾⣿⣿⣦⢀⠀⠀⠀⢻⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀      "
+    puts "⠀⠀⠀⠀⠀⢀⣀⡤⣄⠀⠀⠀⣼⡇⠀⠀⠀⢀⣀⠀⠀⠀⠈⠳⣴⢿⡄⠀⠀⢸⡿⣿⣿⠀⠀⠀⠀⣿⠀⡆⠀⠀⠀⣼⣿⣯⣻⠀⠀⠀⠀⣸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀     "
+    puts "⠀⠀⢀⡴⠚⠉⠀⠀⠈⠳⡄⠀⣿⡇⠀⠀⠀⣿⣿⣷⡄⠀⠀⠀⢹⣆⢧⠀⠀⠀⠙⠿⠋⠀⠀⠀⠀⣿⠀⡇⠀⠀⠀⠙⠛⠉⠁⠀⠀⠀⢠⡏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀    "
+    puts "⠀⢠⠟⠀⠀⠀⠀⢀⣤⣾⣷⣀⡇⢣⠀⠀⠀⢻⣟⣿⣷⠀⠀⠀⠈⣿⣾⣆⠀⠀⠀⠀⠀⠀⠀⠀⣸⢿⢰⡁⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⡾⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀     "
+    puts "⣠⡏⠀⠀⠀⣼⣟⣿⣿⡿⠛⠉⢻⣞⣧⠀⠀⠀⠉⠛⠁⠀⠀⠀⠀⡿⣿⣿⣦⣀⠀⠀⠀⠀⣠⣾⡏⢸⣠⣧⣤⣄⣤⣤⣤⣤⣤⣴⣾⠟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀   ⠀"
+    puts "⣿⠀⠀⠀⢸⢻⣿⠛⠁⠀⠀⠀⠀⠻⣯⣷⣄⠀⠀⠀⠀⠀⠀⢀⣼⠁⠘⠿⣿⣿⣻⣿⣿⣿⣿⠏⠀⣾⣿⣿⣿⣿⣿⣿⣿⡿⠟⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀   "
+    puts "⣿⣇⠀⠀⠈⢿⣿⢧⣴⣶⡆⠀⠀⠀⢿⣿⣿⢳⢦⣤⣤⣤⣶⣿⠟⠀⠀⠀⠀⠉⠉⠛⠋⢩⡤⠖⠒⠛⠛⡿⢁⣾⠋⠉⠉⠉⠉⠉⠉⠉⠉⢉⣿⣿⠀⠀⠀"
+    puts "⣟⢿⣆⠀⠀⠀⠙⠻⠿⠛⠃⠀⠀⠀⣸⡙⠻⢿⣿⣿⣿⣿⠿⠋⠀⣀⡤⠤⠒⠚⠳⣄⢠⣿⠁⠀⠀⠀⣠⠇⡏⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣿⡏⠀  "
+    puts "⠘⣿⣿⣷⣄⡀⠀⠀⠀⠀⠀⠀⣀⣼⣿⠇⠀⠀⠀⣀⣀⣀⠀⢀⣼⣿⣦⡀⠀⠀⠀⠈⢻⡏⠀⠀⠀⠀⣾⠃⡇⣻⢸⠀⠀⠀⢰⣾⣶⣶⣶⣶⣾⡏⠀⠀ "
+    puts "⠀⠈⠻⣿⣿⣿⣶⢶⡶⡶⣶⣾⣿⡿⠋⣠⠴⠚⠉⠁⠀⠉⠙⠺⡿⢿⣧⣅⠀⠀⠀⠀⠀⠀⠀⢠⠋⣾⠃⢸⠀⣸⠀⠀⠀⠀⠘⠛⠛⠿⠿⢿⡏⠀⠀⠀"
+    puts "⠀⠀⠀⠈⠙⠻⠿⠼⠽⠿⠿⠟⠋⢰⡟⠁⠀⠀⢀⣤⣄⡀⠀⠀⠹⡆⠙⢿⣿⣷⡀⠀⠀⠀⠀⣘⣼⠃⠀⢸⠃⢾⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀   "
+    puts "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡾⢳⡀⠀⠀⠈⢿⡿⠇⠀⠀⣼⠃⠀⠀⠙⢿⣿⣿⣧⠀⠀⠀⠈⡇⠀⠀⡇⡸⠀⠀⠀⢰⣶⣤⣤⣤⣼⠃⠀⠀    "
+    puts "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢷⠀⢣⠀⠀⠀⠀⠀⠀⠀⠈⠋⠉⠲⣄⠀⠀⠙⢿⠸⣿⠀⠀⠀⢳⠀⠀⡇⢰⠁⠀⠀⠸⣿⣿⣿⣿⣃⠀⠀⠀    "
+    puts "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣆⠈⣇⠀⠀⠀⠀⣠⣤⣀⠀⠀⠀⠘⣆⠀⠀⠸⡄⢻⡄⠀⠀⠸⡆⢰⡎⣧⡇⠀⠀⠀⠀⠀⠀⠀⠀⢸⠀⠀⠀    "
+    puts "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⡆⠘⡄⠀⠀⠀⢻⣿⣿⠆⠀⠀⠀⢸⠀⠀⠀⣇⠘⡿⠀⢀⣀⣧⢸⢁⣿⣶⣤⣤⣤⣀⣀⣀⠀⢀⡏⠀⠀⠀⠀   "
+    puts "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠹⡄⠹⡄⠀⠀⠈⠉⠁⠀⠀⠀⣠⡾⠀⠀⠀⢹⢀⣿⣿⣿⡿⠃⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠟⠁⠀⠀⠀   "
+    puts "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢳⠀⠹⡄⠀⠀⠀⢀⣠⣴⣾⣿⠃⠀⠀⠀⠘⠿⠟⠛⠛⠁⠀⠀⠀⠉⠉⠉⠛⠛⠛⠿⠟⠁⠀⠀      "
+    puts "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢧⠀⢳⣴⣶⣿⣿⣿⣿⠟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀             "
+    puts "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣦⣿⣿⡿⠟⠛⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀        "
+    puts ""
+    puts "Thanks for shopping! Goodbye!"
+    end
 end
 
 main
