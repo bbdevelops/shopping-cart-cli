@@ -1,6 +1,12 @@
-# ruby-sandox
+# Shopping Cart CLI Ultra
 
-Use this repository as a workspace to experiment in `irb` terminals, write Ruby code in the editor, and save your notes to GitHub by committing and pushing.
+Shopping Cart Command Line Interface (CLI) Ultra keeps track of the items, quantities, and prices of items in your shopping cart.
+Keeps track of how much each item costs as well as the total costs of all the goods in the shopping cart.
+
+# How To Use
+Enter ```ruby main.rb``` into the terminal to initiate the program and begin loading your cart!
+
+Follow the prompts, and access the menu options by entering 1 - 5 and 0 to quit.
 
 - Ruby version: `3.2.1`
 
